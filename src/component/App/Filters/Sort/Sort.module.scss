@@ -1,0 +1,45 @@
+.currentProp {
+  border: none;
+  background-color: white;
+  font-size: 18px;
+  color: coral;
+  border-bottom: 1px dashed coral;
+  cursor: pointer;
+}
+
+.properties {
+  position: relative;
+  padding-right: 20px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.popup {
+  position: absolute;
+  margin-top: 15px;
+  background: #ffffff;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.09);
+  border-radius: 10px;
+  overflow: hidden; 
+  width: 100%;
+}
+
+.popupContent {
+  overflow: hidden;
+  outline: none;
+  padding: 0;
+}
+
+.popupItem {
+  padding: 12px 22px;
+  cursor: pointer;
+  list-style-type: none;
+}
+
+.popupItem:hover {
+  color: coral;
+  background: rgba(254, 95, 30, 0.05);
+}

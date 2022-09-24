@@ -1,0 +1,20 @@
+@font-face {
+  font-family: Alice-Regular; 
+  src: url(../../../../assets/fonts/Alice-Regular.ttf); 
+ }
+
+a {
+  text-decoration: none;
+}
+
+.sockIcon {
+  height: 36px;
+  width: 36px;
+}
+
+.logo {
+  font-family: Alice-Regular;
+  color: black;
+  margin: 20px 0;
+  font-size: 55px;
+}
