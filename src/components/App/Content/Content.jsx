@@ -4,7 +4,7 @@ import Filters from '../Filters/Filters';
 import { content } from './Content.module.scss';
 
 const Content = ({ goods }) => {
-  console.log(goods);
+  console.log();
   return (
     <div>
       <Filters />

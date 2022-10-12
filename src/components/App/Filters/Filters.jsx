@@ -6,20 +6,19 @@ import {
   fetchCurrentGoods,
   fetchAllGoods,
 } from '../../../slices/goodsSlices.js';
-import useSortMethods from '../../../hooks/useSortMethods';
 import Button from './Button/Button.jsx';
 
 const Filters = () => {
   const [activeFilter, setActiveFilter] = useState('all');
-  const { allGoods, currentPage, limit } = useSelector((state) => state.goods);
+  const { allGoods } = useSelector((state) => state.goods);
+  const { page, limit, method } = useSelector((state) => state.filters);
   const dispatch = useDispatch();
-  const { activeMethod } = useSortMethods();
 
   const handleClick = (id) => {
     setActiveFilter(id);
     const request = {
       path: id,
-      params: { p: currentPage, l: limit, ...activeMethod.method },
+      params: { p: page, l: limit, method },
     };
     dispatch(fetchCurrentGoods(request));
     dispatch(fetchAllGoods(id));

@@ -1,0 +1,53 @@
+.card {
+  padding: 20px 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  max-width: 400px;
+  max-height: 400px;
+  border-radius: 25px;
+  position: relative;
+}
+
+.card:hover {
+  box-shadow: 0px 5px 15px rgb(0 0 0 / 9%);
+}
+
+img {
+  object-fit: cover;
+  height: 100%;
+  width: auto;
+}
+
+.aboutItem {
+  display: none;
+  position: absolute;
+}
+
+.card:hover > .aboutItem {
+  display: block;
+  transition: 1s;
+  height: 145px;
+  bottom: 0;
+  padding: 20px;
+  background:rgba(255, 254, 254, 0.586);
+}
+
+.buttonAddToCart {
+  margin-top: 10px;
+  background: rgb(231, 119, 90);
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  padding: 10px 25px;
+  font-size: 15px;
+}
+
+.iconAddToCart {
+  height: 12px;
+  width: 12px;
+  margin-right: 5px;
+}
+
+.buttonAddToCart:hover {
+  background: coral;
+}

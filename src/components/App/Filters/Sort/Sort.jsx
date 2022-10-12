@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import useSortMethods from '../../../../hooks/useSortMethods';
 import {
-  currentProp, properties, container, popup, popupContent, popupItem,
+  currentProp, properties, container, popup, popupContent, popupItem, popupContainer,
 } from './Sort.module.scss';
 import Select from './Select/Select';
+import { actions } from '../../../../slices/filtersSlices';
 
 const Sort = ({ allGoods }) => {
   const [open, setOpen] = useState(false);
+  const { method } = useSelector((state) => state.filters);
+  const dispatch = useDispatch();
 
   const currentColors = allGoods.reduce((acc, i) => {
     i.colors.forEach((color) => {
@@ -24,10 +28,10 @@ const Sort = ({ allGoods }) => {
     return acc;
   }, []);
 
-  const { activeMethod, setActiveMethod, sortMethods } = useSortMethods();
+  const { sortMethods } = useSortMethods();
 
-  const handleClick = (method) => {
-    setActiveMethod(method);
+  const handleClick = (currentMethod) => {
+    dispatch(actions.changeMethod(currentMethod));
     setOpen(false);
   };
 
@@ -35,21 +39,23 @@ const Sort = ({ allGoods }) => {
     <div className={container}>
       <div className={properties}>
         <span>Сортировать: </span>
-        <span className={currentProp} onClick={() => setOpen(!open)}>
-          {activeMethod.name}
-        </span>
+        <button className={currentProp} type="button" onClick={() => setOpen(!open)}>
+          {method.name}
+        </button>
         {open && (
           <div className={popup}>
             <ul className={popupContent}>
-              {sortMethods.map((sortMethod, index) => (
-                <li
-                  key={index}
-                  onClick={() => handleClick(sortMethod)}
-                  className={popupItem}
-                >
-                  {sortMethod.name}
-                </li>
-              ))}
+              <div className={popupContainer}>
+                {sortMethods.map((sortMethod, index) => (
+                  <li
+                    key={index}
+                    onClick={() => handleClick(sortMethod)}
+                    className={popupItem}
+                  >
+                    {sortMethod.name}
+                  </li>
+                ))}
+              </div>
             </ul>
           </div>
         )}
