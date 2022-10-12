@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {
   currentProp, properties, popup, popupContent, popupItem, deleteButton, popupContainer,
 } from '../Sort.module.scss';
-import Delete from '../../../../../assets/images/x.svg';
+import Delete from '../../../../assets/images/x.svg';
 
 const Select = ({ text, sortMethods }) => {
   const [open, setOpen] = useState(false);

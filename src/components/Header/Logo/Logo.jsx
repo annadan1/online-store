@@ -1,5 +1,5 @@
 import React from 'react';
-import Sock from '../../../../assets/images/sock.svg';
+import Sock from '../../../assets/images/sock.svg';
 import { sockIcon, logo } from './Logo.module.scss';
 
 const Logo = () => (

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Header from './Header/Header';
-import Content from './Content/Content';
+import Header from '../Header/Header';
+import Content from '../Content/Content';
 import { fetchCurrentGoods, fetchAllGoods } from '../../slices/goodsSlices.js';
 import { wrapper } from './App.module.scss';
 

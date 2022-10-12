@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import useSortMethods from '../../../../hooks/useSortMethods';
+import useSortMethods from '../../../hooks/useSortMethods';
 import {
   currentProp, properties, container, popup, popupContent, popupItem, popupContainer,
 } from './Sort.module.scss';
 import Select from './Select/Select';
-import { actions } from '../../../../slices/filtersSlices';
+import { actions } from '../../../slices/filtersSlices';
 
 const Sort = ({ allGoods }) => {
   const [open, setOpen] = useState(false);

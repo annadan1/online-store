@@ -3,8 +3,8 @@ import { useDispatch } from 'react-redux';
 import {
   card, aboutItem, buttonAddToCart, iconAddToCart,
 } from './CardItem.module.scss';
-import AddToCart from '../../../../assets/images/addToCart.svg';
-import { actions } from '../../../../slices/cartSlices';
+import AddToCart from '../../../assets/images/addToCart.svg';
+import { actions } from '../../../slices/cartSlices';
 
 const CardItem = ({ item }) => {
   const dispatch = useDispatch();

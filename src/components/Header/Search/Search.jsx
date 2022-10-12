@@ -1,7 +1,7 @@
 import React from 'react';
-import Loupe from '../../../../assets/images/loupe.svg';
+import Loupe from '../../../assets/images/loupe.svg';
 import { loupeIcon, root, deleteButton } from './Search.module.scss';
-import Delete from '../../../../assets/images/x.svg';
+import Delete from '../../../assets/images/x.svg';
 
 const Search = () => {
   const [value, setValue] = React.useState('');

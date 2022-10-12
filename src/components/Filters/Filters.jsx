@@ -5,7 +5,7 @@ import Sort from './Sort/Sort';
 import {
   fetchCurrentGoods,
   fetchAllGoods,
-} from '../../../slices/goodsSlices.js';
+} from '../../slices/goodsSlices.js';
 import Button from './Button/Button.jsx';
 
 const Filters = () => {
