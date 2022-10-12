@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 const useSortMethods = () => {
   const sortMethods = [
     { name: 'по убыванию цены', method: { sortBy: 'price', order: 'desc' } },
@@ -9,8 +7,7 @@ const useSortMethods = () => {
     { name: 'от Я до А', method: { sortBy: 'title', order: 'desc' } },
   ];
 
-  const [activeMethod, setActiveMethod] = useState({ name: 'по популярности', method: { sortBy: 'rating', order: 'desc' } });
-  return { activeMethod, setActiveMethod, sortMethods };
+  return { sortMethods };
 };
 
 export default useSortMethods;

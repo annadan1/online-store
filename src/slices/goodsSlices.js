@@ -23,9 +23,6 @@ export const fetchAllGoods = createAsyncThunk(
 const initialState = {
   allGoods: [],
   currentGoods: [],
-  currentPage: 1,
-  limit: 6,
-  allPage: 0,
 };
 
 const goodsSlice = createSlice({
@@ -38,7 +35,6 @@ const goodsSlice = createSlice({
       })
       .addCase(fetchAllGoods.fulfilled, (state, { payload }) => {
         state.allGoods = payload;
-        state.allPage = Math.ceil(payload.length / state.limit);
       });
   },
 });
