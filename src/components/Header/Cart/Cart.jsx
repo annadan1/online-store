@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import CartImage from '../../../assets/images/shopping_bag.svg';
 import {
   cartButton, cartIcon, cartInfo,
@@ -9,14 +10,14 @@ const Cart = () => {
   const { totalCount } = useSelector((state) => state.cart);
 
   return (
-    <a href="/cart">
+    <Link to="/cart">
       <div className={cartButton}>
         <CartImage className={cartIcon} />
         <span className={cartInfo}>
           {totalCount}
         </span>
       </div>
-    </a>
+    </Link>
   );
 };
 

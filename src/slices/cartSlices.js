@@ -3,22 +3,34 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   totalCount: 0,
   totalPrice: 0,
-  goods: [],
+  items: [],
 };
 
 const cartSlice = createSlice({
   name: 'goodsSlice',
   initialState,
   reducers: {
-    addGoods: (state, { payload }) => {
-      state.goods.push(payload);
+    addItem: (state, { payload }) => {
+      const findItem = state.items.find((item) => item.id === payload.id);
+      findItem ? findItem.count + 1 : state.items.push({ ...payload, count: 1 });
       state.totalCount += 1;
       state.totalPrice += payload.price;
     },
-    removeGoods: (state, { payload }) => {
-      state.goods = state.goods.filter(({ id }) => id !== payload.id);
+    removeItem: (state, { payload }) => {
+      state.items = state.items.filter(({ id }) => id !== payload.id);
       state.totalCount -= 1;
       state.totalPrice -= payload.price;
+    },
+    removeItems(state) {
+      state.items = [];
+      state.totalPrice = 0;
+      state.totalCount = 0;
+    },
+    reduceItem: (state, { payload }) => {
+      const findItem = state.items.find((item) => item.id === payload.id);
+      findItem.count - 1;
+      state.totalCount -= 1;
+      state.totalPrice -= 1;
     },
   },
 });

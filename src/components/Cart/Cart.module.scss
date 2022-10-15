@@ -1,0 +1,32 @@
+.wrapperEmptyCart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75vh;
+}
+
+.infoEmptyCart {
+  display: inline-grid;
+  font-size: 20px;
+}
+
+.buttonReturnToStore {
+  margin-top: 20px;
+  border-radius: 25px;
+  background: coral;
+  border: none;
+  padding: 10px;
+  font-size: 15px;
+}
+
+.linkReturnToStore {
+  color: black;
+}
+
+.cartResult {
+  display: flex;
+  align-content: flex-end;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-right: 100px;
+}

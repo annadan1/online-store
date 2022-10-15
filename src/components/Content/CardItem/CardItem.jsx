@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import {
-  card, aboutItem, buttonAddToCart, iconAddToCart,
+  card, aboutItem, buttonAddToCart, iconAddToCart, imageProduct,
 } from './CardItem.module.scss';
 import AddToCart from '../../../assets/images/addToCart.svg';
 import { actions } from '../../../slices/cartSlices';
@@ -10,12 +10,12 @@ const CardItem = ({ item }) => {
   const dispatch = useDispatch();
 
   const handleClick = () => {
-    dispatch(actions.addGoods(item));
+    dispatch(actions.addItem(item));
   };
 
   return (
     <div className={card}>
-      <img src={item.imageUrl} alt={item.title} />
+      <img src={item.imageUrl} alt={item.title} className={imageProduct} />
       <div className={aboutItem}>
         <div>{`Название: ${item.title}`}</div>
         <div>{`Размер: ${item.size}`}</div>
