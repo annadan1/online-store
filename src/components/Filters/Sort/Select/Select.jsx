@@ -3,14 +3,19 @@ import {
   currentProp, properties, popup, popupContent, popupItem, deleteButton, popupContainer,
 } from '../Sort.module.scss';
 import Delete from '../../../../assets/images/x.svg';
+import useSearch from '../../../../hooks/useSearchParamsContext';
 
-const Select = ({ text, sortMethods }) => {
+const Select = ({
+  text, sortMethods, currentSelection, sort,
+}) => {
   const [open, setOpen] = useState(false);
-  const [currentSelection, setCurrentSelection] = useState('Все');
+  const { getParams, updateParams } = useSearch();
+  const params = getParams();
 
-  const handleClick = (sortMethod) => {
-    setCurrentSelection(sortMethod);
-    setOpen(!open);
+  const handleClick = (newMethod) => {
+    const newParams = { p: 1, ...newMethod };
+    updateParams(params, newParams);
+    setOpen(false);
   };
 
   return (
@@ -19,7 +24,7 @@ const Select = ({ text, sortMethods }) => {
       <button type="button" className={currentProp} onClick={() => setOpen(!open)}>
         {currentSelection}
       </button>
-      {currentSelection !== 'Все' && <button type="button" aria-label="delete" className={deleteButton} onClick={() => setCurrentSelection('Все')}><Delete /></button>}
+      {currentSelection !== 'Все' && <button type="button" aria-label="delete" className={deleteButton} onClick={() => handleClick({ [sort]: '' })}><Delete /></button>}
       {open && (
       <div className={popup}>
         <ul className={popupContent}>
@@ -27,7 +32,7 @@ const Select = ({ text, sortMethods }) => {
             {sortMethods.map((sortMethod, index) => (
               <li
                 key={index}
-                onClick={() => handleClick(sortMethod)}
+                onClick={() => handleClick({ [sort]: sortMethod })}
                 className={popupItem}
               >
                 {sortMethod}

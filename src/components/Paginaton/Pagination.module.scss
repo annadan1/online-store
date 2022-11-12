@@ -1,0 +1,65 @@
+.wrapper {
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.selectPage {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: none;
+  margin: 5px;
+}
+
+.activeSelectedPage {
+  width: 40px;
+  height: 40px;
+  background: coral;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  margin: 5px;
+}
+
+.selectPage:hover{
+  background-color: rgba(220, 220, 220, 0.5);
+  border-radius: 25px;
+  color: coral;
+}
+
+.paginationIconNext {
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+}
+
+.paginationIconPrev {
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+}
+
+.paginationButton {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  background: none;
+  border: none;
+}
+
+.paginationButton:hover >.paginationIconNext{
+  color: coral;
+  transition-delay: 0s, 0s, 2s;
+  margin-left: 10px;
+}
+
+.paginationButton:hover >.paginationIconPrev{
+  color: coral;
+  transition-delay: 0s, 0s, 2s;
+  margin: 0 10px 0 0;
+}
+
+.paginationButton:hover {
+  color: coral;
+  fill: coral
+}

@@ -4,18 +4,16 @@ import routes from '../routes/index.js';
 
 export const fetchCurrentGoods = createAsyncThunk(
   'goods/fetchCurrentGoods',
-  async (request) => {
-    const { params, path } = request;
-    const { data } = await axios.get(routes.getGoodsPath(path), { params });
-
+  async (params) => {
+    const { data } = await axios.get(routes.getGoodsPath(), { params });
     return data;
   },
 );
 
 export const fetchAllGoods = createAsyncThunk(
   'goods/fetchAllGoods',
-  async (path) => {
-    const { data } = await axios.get(routes.getGoodsPath(path), {});
+  async (params) => {
+    const { data } = await axios.get(routes.getGoodsPath(), { params });
     return data;
   },
 );

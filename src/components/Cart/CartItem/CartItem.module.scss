@@ -1,8 +1,78 @@
+.wrapper {
+  margin: 20px;
+}
+
 .imageProduct {
-    width: 100px;
-    height: 100px;
-  }
+  width: 150px;
+  height: 150px;
+}
   
+.cartContent {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cartInfo {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  width: 50%;
+}
+
+.buttonCalc {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  width: 30px;
+  background: white;
+  border-color: coral;
+  border-width: 2px;
+  border-style: solid;
+  margin: 10px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.buttonCalc:hover {
+  background: coral;
+  fill: white;
+}
+
+.buttonCalc:disabled {
+  opacity: 0;
+  border-color: gray;
+  fill:gray;
+  cursor: auto;
+}
+
+.cartCalc {
+  display: inherit;
+  align-items: center; 
+}
+
 .productInfo {
-    margin: 20px; 
+  font-size: 15px;
+  color: gray;
+}
+
+.buttonRemove {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  width: 30px;
+  background: white;
+  border-color: black;
+  border-style: solid;
+  border-radius: 25px;
+  cursor: pointer;
+  transform: rotate(45deg);
+  fill: black;
+}
+
+.buttonRemove:hover {
+  border-color: red;
+  background-color: red;
+  fill: white;
 }

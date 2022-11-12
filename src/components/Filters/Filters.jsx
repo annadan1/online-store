@@ -1,27 +1,19 @@
-import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import { filters, buttons } from './Filters.module.scss';
 import Sort from './Sort/Sort';
-import {
-  fetchCurrentGoods,
-  fetchAllGoods,
-} from '../../slices/goodsSlices.js';
 import Button from './Button/Button.jsx';
+import useSearch from '../../hooks/useSearchParamsContext';
 
 const Filters = () => {
-  const [activeFilter, setActiveFilter] = useState('all');
   const { allGoods } = useSelector((state) => state.goods);
-  const { page, limit, method } = useSelector((state) => state.filters);
-  const dispatch = useDispatch();
+  const { getParams, updateParams } = useSearch();
+  const params = getParams();
 
-  const handleClick = (id) => {
-    setActiveFilter(id);
-    const request = {
-      path: id,
-      params: { p: page, l: limit, method },
-    };
-    dispatch(fetchCurrentGoods(request));
-    dispatch(fetchAllGoods(id));
+  const handleClick = (newCategory) => {
+    const categories = newCategory === 'Все' ? '' : newCategory;
+    const newParams = { ...params, categories, p: 1 };
+    updateParams(params, newParams);
   };
 
   return (
@@ -31,25 +23,21 @@ const Filters = () => {
           text="Все"
           id="all"
           handleClick={handleClick}
-          activeFilter={activeFilter}
         />
         <Button
-          text="Женщинам"
+          text="Женские"
           id="woman"
           handleClick={handleClick}
-          activeFilter={activeFilter}
         />
         <Button
-          text="Мужчинам"
+          text="Мужские"
           id="man"
           handleClick={handleClick}
-          activeFilter={activeFilter}
         />
         <Button
           text="Унисекс"
           id="unisex"
           handleClick={handleClick}
-          activeFilter={activeFilter}
         />
       </div>
       <Sort allGoods={allGoods} />

@@ -12,25 +12,34 @@ const cartSlice = createSlice({
   reducers: {
     addItem: (state, { payload }) => {
       const findItem = state.items.find((item) => item.id === payload.id);
-      findItem ? findItem.count + 1 : state.items.push({ ...payload, count: 1 });
+      if (findItem) {
+        findItem.count += 1;
+      } else {
+        state.items.push({ ...payload, count: 1 });
+      }
       state.totalCount += 1;
       state.totalPrice += payload.price;
     },
     removeItem: (state, { payload }) => {
+      const findItem = state.items.find((item) => item.id === payload.id);
       state.items = state.items.filter(({ id }) => id !== payload.id);
-      state.totalCount -= 1;
-      state.totalPrice -= payload.price;
+      state.totalCount -= findItem.count;
+      state.totalPrice -= payload.price * findItem.count;
     },
     removeItems(state) {
       state.items = [];
       state.totalPrice = 0;
       state.totalCount = 0;
     },
-    reduceItem: (state, { payload }) => {
+    minusItem: (state, { payload }) => {
       const findItem = state.items.find((item) => item.id === payload.id);
-      findItem.count - 1;
+      if (findItem.count === 1) {
+        state.items = state.items.filter(({ id }) => id !== payload.id);
+      } else {
+        findItem.count -= 1;
+      }
       state.totalCount -= 1;
-      state.totalPrice -= 1;
+      state.totalPrice -= payload.price;
     },
   },
 });
