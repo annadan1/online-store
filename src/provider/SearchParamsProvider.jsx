@@ -22,8 +22,12 @@ const SearchParamsProvider = ({ children }) => {
       }
     });
 
-    const { categories, colors, size } = newParams;
-    const path = { categories, colors, size };
+    const {
+      categories, colors, size, title,
+    } = newParams;
+    const path = {
+      categories, colors, size, title,
+    };
 
     setSearchParams(newParams);
     dispatch(fetchCurrentGoods(newParams));

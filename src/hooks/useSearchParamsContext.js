@@ -2,6 +2,6 @@ import { useContext } from 'react';
 
 import searchParamsContext from '../context/SearchParamsContext';
 
-const useAuth = () => useContext(searchParamsContext);
+const useSearchParamsContext = () => useContext(searchParamsContext);
 
-export default useAuth;
+export default useSearchParamsContext;
