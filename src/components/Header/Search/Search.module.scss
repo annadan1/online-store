@@ -7,7 +7,6 @@
   width: 20px;
   height: 20px;
   height: 22px;
-  left: 14px;
   opacity: .3;
   position: absolute;
   top: 12px;
@@ -36,4 +35,10 @@ input:focus {
   opacity: .3;
   position: absolute;
   top: 12px;
+}
+.submitButton {
+  background: none;
+  border: none;
+  left: 10px;
+  position: absolute;
 }

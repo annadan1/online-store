@@ -16,8 +16,8 @@ const Pagination = () => {
 
   const { allGoods } = useSelector((state) => state.goods);
 
-  const page = Number(searchParams.get('p'));
-  const limit = Number(searchParams.get('l'));
+  const page = Number(searchParams.get('p')) || 1;
+  const limit = Number(searchParams.get('l')) || 6;
 
   useEffect(() => {
     if (allGoods.length !== 0) {
@@ -30,7 +30,6 @@ const Pagination = () => {
     const newParams = { ...params, p: newPage };
     updateParams(params, newParams);
   };
-
   return (
     <div className={wrapper}>
       {page !== 1 && (
