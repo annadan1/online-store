@@ -1,17 +1,14 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import {
-  card, aboutItem, buttonAddToCart, iconAddToCart, imageProduct,
+  card, aboutItem, imageProduct,
 } from './CardItem.module.scss';
-import AddToCart from '../../../assets/images/addToCart.svg';
-import { actions } from '../../../slices/cartSlices';
+
+import Buttons from '../Buttons/Buttons';
 
 const CardItem = ({ item }) => {
-  const dispatch = useDispatch();
-
-  const handleClick = () => {
-    dispatch(actions.addItem(item));
-  };
+  const { items } = useSelector((state) => state.cart);
+  const addedToCart = items.find((i) => i.id === item.id);
 
   return (
     <div className={card}>
@@ -21,10 +18,7 @@ const CardItem = ({ item }) => {
         <div>{`Размер: ${item.size}`}</div>
         <div>{`Состав: ${item.consist}`}</div>
         <div>{`Цена: ${item.price} ₽`}</div>
-        <button type="button" className={buttonAddToCart} onClick={() => handleClick(item)}>
-          <AddToCart className={iconAddToCart} />
-          Добавить
-        </button>
+        <Buttons item={item} addedToCart={addedToCart} />
       </div>
     </div>
   );
