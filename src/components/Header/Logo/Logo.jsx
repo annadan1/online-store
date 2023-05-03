@@ -1,15 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Sock from '../../../assets/images/sock.svg';
 import { sockIcon, logo } from './Logo.module.scss';
 
 const Logo = () => (
-  <a href="/">
+  <Link to="/">
     <div className={logo}>
       Н
       <Sock className={sockIcon} />
       СКИ
     </div>
-  </a>
+  </Link>
 );
 
 export default Logo;
