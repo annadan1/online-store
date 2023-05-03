@@ -1,19 +1,17 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import {
-  card, aboutItem, imageProduct,
-} from './CardItem.module.scss';
+import Buttons from '../../components/Content/Buttons/Buttons';
 
-import Buttons from '../Buttons/Buttons';
-
-const CardItem = ({ item }) => {
+const ItemPage = ({ item }) => {
   const { items } = useSelector((state) => state.cart);
   const addedToCart = items.find((i) => i.id === item.id);
 
   return (
-    <div className={card}>
-      <img src={item.imageUrl} alt={item.name} className={imageProduct} />
-      <div className={aboutItem}>
+    <div>
+      <div>
+        <img src={item.imageUrl} alt={item.name} />
+      </div>
+      <div>
         <div>{`Название: ${item.name}`}</div>
         <div>{`Размер: ${item.size}`}</div>
         <div>{`Состав: ${item.consist}`}</div>
@@ -24,4 +22,4 @@ const CardItem = ({ item }) => {
   );
 };
 
-export default CardItem;
+export default ItemPage;

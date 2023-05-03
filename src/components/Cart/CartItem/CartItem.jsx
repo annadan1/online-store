@@ -28,7 +28,7 @@ const CartItem = ({ item }) => {
         <div className={cartInfo}>
           <img src={item.imageUrl} alt="imageProduct" className={imageProduct} />
           <div>
-            <div>{item.title}</div>
+            <div>{item.name}</div>
             <div className={productInfo}>{`размер: ${item.size}`}</div>
             <div className={productInfo}>{`состав: ${item.consist}`}</div>
           </div>

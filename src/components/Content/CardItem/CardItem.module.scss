@@ -1,11 +1,14 @@
 .card {
-  padding: 20px 0;
+  padding: 20px;
   box-sizing: border-box;
   overflow: hidden;
-  max-width: 400px;
-  max-height: 400px;
+  width: 400px;
+  height: 400px;
   border-radius: 25px;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .card:hover {
@@ -13,7 +16,7 @@
 }
 
 .imageProduct {
-  object-fit: cover;
+  object-fit: contain;
   height: 100%;
   width: auto;
 }
@@ -24,11 +27,16 @@
 }
 
 .card:hover > .aboutItem {
-  display: block;
+  display: flex;
+  flex-direction: column;
   transition: 1s;
   height: 145px;
   width: 100%;
   bottom: 0;
-  padding: 20px;
-  background:rgba(255, 254, 254, 0.586);
+  background: rgba(255, 254, 254, 0.586);
+  padding: 30px 0;
+  & div {
+    padding: 0 20px;
+    word-wrap: break-word;
+  }
 }

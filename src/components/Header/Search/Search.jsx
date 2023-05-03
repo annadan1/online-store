@@ -12,10 +12,10 @@ const Search = () => {
   const [searchParams] = useSearchParams();
   const [value, setValue] = React.useState('');
   const params = getParams();
-  const title = searchParams.get('title') || '';
+  const name = searchParams.get('name') || '';
 
   useEffect(() => {
-    setValue(title);
+    setValue(name);
   }, []);
 
   const handleChange = (e) => {
@@ -24,14 +24,14 @@ const Search = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newParams = { ...params, title: value };
+    const newParams = { ...params, name: value };
     updateParams(params, newParams);
   };
 
   const handleDeleteButton = (e) => {
     e.preventDefault();
     setValue('');
-    const newParams = { ...params, title: '' };
+    const newParams = { ...params, name: '' };
     updateParams(params, newParams);
   };
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import {
   buttonsGroup, cartCalc, buttonCalc, buttonAddToCart,
-} from './ButtonsGroup.module.scss';
+} from './Buttons.module.scss';
 import { actions } from '../../../slices/cartSlices';
 import Add from '../../../assets/images/add.svg';
 import Minus from '../../../assets/images/minus.svg';

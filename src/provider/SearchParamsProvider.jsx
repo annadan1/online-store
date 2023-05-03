@@ -16,6 +16,7 @@ const SearchParamsProvider = ({ children }) => {
 
     Object.entries(nextParams).forEach(([key, value]) => {
       if (!value) {
+        // delete newParams[key]
         newParams = omit(newParams, key);
       } else {
         newParams = { ...newParams, [key]: decodeURI(value) };
@@ -23,10 +24,13 @@ const SearchParamsProvider = ({ children }) => {
     });
 
     const {
-      categories, colors, size, title,
+      categories, colors, size, name,
     } = newParams;
     const path = {
-      categories, colors, size, title,
+      categories,
+      colors,
+      size,
+      name,
     };
 
     setSearchParams(newParams);
@@ -37,7 +41,10 @@ const SearchParamsProvider = ({ children }) => {
 
   const getParams = () => useMemo(() => {
     const defaultParams = {
-      p: 1, l: 6, sortBy: 'rating', order: 'desc',
+      p: 1,
+      l: 6,
+      sortBy: 'rating',
+      order: 'desc',
     };
 
     if (search) {
@@ -45,7 +52,10 @@ const SearchParamsProvider = ({ children }) => {
         .slice(1)
         .split('&')
         .map((p) => p.split('='))
-        .reduce((obj, [key, value]) => ({ ...obj, [key]: decodeURI(value) }), {});
+        .reduce(
+          (obj, [key, value]) => ({ ...obj, [key]: decodeURI(value) }),
+          {},
+        );
       return { ...defaultParams, ...currentParams };
     }
     return defaultParams;
