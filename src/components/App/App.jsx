@@ -1,32 +1,20 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import Store from '../Store/Store';
+
+import MainPage from '../../Pages/MainPage/MainPage';
 import NotfoundPage from '../../Pages/NotfoundPage/NotfoundPage';
 import CartPage from '../../Pages/CartPage/CartPage';
 import Order from '../../Pages/Order/Order';
-import useSearch from '../../hooks/useSearchParamsContext';
 
-const App = () => {
-  const dispatch = useDispatch();
-
-  const { getParams, updateParams } = useSearch();
-  const params = getParams();
-
-  useEffect(() => {
-    updateParams(params, {});
-  }, [dispatch]);
-
-  return (
-    <div>
-      <Routes>
-        <Route path="/" element={<Store />} />
-        <Route path="/cart" element={<CartPage />} />
-        <Route path="*" element={<NotfoundPage />} />
-        <Route path="/order" element={<Order />} />
-      </Routes>
-    </div>
-  );
-};
+const App = () => (
+  <div>
+    <Routes>
+      <Route path="/" element={<MainPage />} />
+      <Route path="/cart" element={<CartPage />} />
+      <Route path="*" element={<NotfoundPage />} />
+      <Route path="/order" element={<Order />} />
+    </Routes>
+  </div>
+);
 
 export default App;
