@@ -12,7 +12,10 @@ const App = () => {
 
   useEffect(() => {
     const cartItems = JSON.parse(localStorage.getItem('cart'));
-    dispatch(actions.addItems(cartItems));
+    console.log(cartItems);
+    if (cartItems) {
+      dispatch(actions.addItems(cartItems));
+    }
   }, []);
 
   return (
