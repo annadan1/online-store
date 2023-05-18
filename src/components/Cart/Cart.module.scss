@@ -32,7 +32,7 @@
   align-content: flex-end;
   flex-wrap: wrap;
   flex-direction: column;
-  margin-right: 100px;
+  align-items: flex-end
 }
 
 
@@ -76,6 +76,5 @@
 
 .payment:hover {
   background: rgb(85, 242, 1);;
-  font-size: 30px;
   border: none;
 }

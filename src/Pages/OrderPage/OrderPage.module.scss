@@ -1,0 +1,26 @@
+.active {
+  border-radius: 50px;
+  background-color: coral;
+  height: 30px;
+  width: 30px;
+}
+
+.steps {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 20px;
+  & p {
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: default;
+  }
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}

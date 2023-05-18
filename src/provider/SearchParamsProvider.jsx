@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useSearchParams, useLocation } from 'react-router-dom';
 import { omit } from 'lodash';
 import searchParamsContext from '../context/SearchParamsContext';
-import { fetchCurrentGoods, fetchAllGoods } from '../slices/goodsSlices';
+import { fetchCurrentGoods, fetchAllGoods } from '../slices/goodsSlice';
 
 const SearchParamsProvider = ({ children }) => {
   const dispatch = useDispatch();

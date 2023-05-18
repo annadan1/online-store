@@ -6,7 +6,7 @@ import {
   cartResult, removeItems, buttonRemoveItems, trashIcon, wrapper, payment, paymentLink,
 } from './Cart.module.scss';
 import Trash from '../../assets/images/trash.svg';
-import { actions } from '../../slices/cartSlices.js';
+import { actions } from '../../slices/cartSlice.js';
 
 const Cart = ({ cart }) => {
   const dispatch = useDispatch();
@@ -36,7 +36,7 @@ const Cart = ({ cart }) => {
           {`На сумму: ${cart.totalPrice} ₽`}
         </div>
         <button type="button" className={payment}>
-          <Link to="/payment" className={paymentLink}>
+          <Link to="/order" className={paymentLink}>
             Перейти к покупке
           </Link>
         </button>

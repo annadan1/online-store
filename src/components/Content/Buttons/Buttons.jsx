@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import {
   buttonsGroup, cartCalc, buttonCalc, buttonAddToCart,
 } from './Buttons.module.scss';
-import { actions } from '../../../slices/cartSlices';
+import { actions } from '../../../slices/cartSlice';
 import Add from '../../../assets/images/add.svg';
 import Minus from '../../../assets/images/minus.svg';
 

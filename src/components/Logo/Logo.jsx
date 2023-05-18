@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Sock from '../../../assets/images/sock.svg';
+import Sock from '../../assets/images/sock.svg';
 import { sockIcon, logo } from './Logo.module.scss';
 
 const Logo = () => (

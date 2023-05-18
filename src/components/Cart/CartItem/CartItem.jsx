@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { actions } from '../../../slices/cartSlices.js';
+import { actions } from '../../../slices/cartSlice.js';
 import {
   imageProduct, productInfo, buttonCalc, cartCalc, cartContent, wrapper, cartInfo, buttonRemove,
 } from './CartItem.module.scss';
