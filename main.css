@@ -244,9 +244,9 @@
   grid-row-gap: 20px;
   justify-items: center
 }
-/*!***************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/components/Header/Logo/Logo.module.scss ***!
-  \***************************************************************************************************************************/
+/*!********************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/components/Logo/Logo.module.scss ***!
+  \********************************************************************************************************************/
 @font-face {
   font-family: Alice-Regular; 
   src: url(6676c30016104188a3ec.ttf); 
@@ -256,12 +256,12 @@ a {
   text-decoration: none;
 }
 
-.Logo-module_sockIcon__nPp4Z {
+.Logo-module_sockIcon__ggsMf {
   height: 36px;
   width: 36px;
 }
 
-.Logo-module_logo__aXGmr {
+.Logo-module_logo__flNGv {
   font-family: Alice-Regular;
   color: black;
   margin: 20px 0;
@@ -567,7 +567,7 @@ input:focus {
   align-content: flex-end;
   flex-wrap: wrap;
   flex-direction: column;
-  margin-right: 100px;
+  align-items: flex-end
 }
 
 
@@ -611,6 +611,46 @@ input:focus {
 
 .Cart-module_payment__vYRC1:hover {
   background: rgb(85, 242, 1);;
-  font-size: 30px;
   border: none;
 }
+/*!*************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/Pages/OrderPage/OrderPage.module.scss ***!
+  \*************************************************************************************************************************/
+.OrderPage-module_active__A159Z {
+  border-radius: 50px;
+  background-color: coral;
+  height: 30px;
+  width: 30px;
+}
+
+.OrderPage-module_steps__h2mun {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 20px;
+  & p {
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: default;
+  }
+}
+
+.OrderPage-module_container__uLvR9 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/*!**************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/components/Order/Mail/Mail.module.scss ***!
+  \**************************************************************************************************************************/
+.Mail-module_container___jsuT {
+  & form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
